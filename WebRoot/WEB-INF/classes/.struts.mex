@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="employee" location="0,0" size="0,0">
+    <action name="list" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="employee.jsp" />
+      </result>
+    </action>
+    <action name="manage_*" location="0,0" size="0,0">
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="employeeAdd.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="message.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="buyer" location="0,0" size="0,0">
+    <action name="logon_*" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="logon_success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="logout" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="reg_*" location="0,0" size="0,0">
+      <result name="reg" />
+      <result name="message" />
+      <result name="checkuser" />
+    </action>
+  </package>
+  <webResource name="employee.jsp" path="/WEB-INF/page/employee.jsp" location="0,0" size="0,0" />
+  <webResource name="employeeAdd.jsp" path="/WEB-INF/page/employeeAdd.jsp" location="0,0" size="0,0" />
+  <webResource name="message.jsp" path="/WEB-INF/page/message.jsp" location="0,0" size="0,0" />
+  <webResource name="logon_success.jsp" path="/WEB-INF/page/user/logon_success.jsp" location="0,0" size="0,0" />
+  <webResource name="index.jsp" path="/index.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

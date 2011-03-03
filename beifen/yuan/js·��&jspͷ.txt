@@ -1,0 +1,12 @@
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="/jq/css/screen.css" />
+
+		<script src="/jq/lib/jquery.js" type="text/javascript"></script>
+		<script src="/jq/jquery.validate.js" type="text/javascript"></script>
+		
+		
+		<%@taglib prefix="s" uri="/struts-tags" %>
+		
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/page/share/taglib.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

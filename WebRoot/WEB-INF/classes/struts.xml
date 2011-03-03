@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- ========constant================== -->
+	<constant
+		name="struts.ui.theme"
+		value="simple" />
+	<constant
+		name="struts.i18n.reload"
+		value="false" />
+	<constant
+		name="struts.devMode"
+		value="true" />
+	<constant
+		name="struts.configuration.xml.reload"
+		value="false" />
+	<constant
+		name="struts.custom.i18n.resources"
+		value="globalMessages" />
+	<constant
+		name="struts.action.extension"
+		value="action,do,," />
+	<constant
+		name="struts.codebehind.defaultPackage"
+		value="person" />
+	<constant
+		name="struts.serve.static"
+		value="true" />
+	<constant
+		name="struts.serve.static.browserCache"
+		value="false" />
+	<constant
+		name="struts.objectFactory"
+		value="spring" />
+	<!-- ===========include=============== -->
+	<include
+		file="struts-validation.xml" />
+
+	<!-- ===========package employee=============== -->
+	<package
+		name="employee"
+		namespace="/employee"
+		extends="struts-default">
+		<action
+			name="list"
+			class="employeeAction">
+			<result
+				name="list">/WEB-INF/page/employee.jsp</result>
+		</action>
+		<action
+			name="manage_*"
+			class="employeeManageAction"
+			method="{1}">
+			<result
+				name="add">/WEB-INF/page/employeeAdd.jsp</result>
+			<result
+				name="message">/WEB-INF/page/message.jsp</result>
+		</action>
+	</package>
+	<!-- =========package buyer================= -->
+	<package
+		name="buyer"
+		namespace="/user"
+		extends="struts-default">
+		<!-- 网站用户登录 -->
+		<action
+			name="logon_*"
+			class="logonAction"
+			method="{1}">
+			<result>/WEB-INF/page/user/logon_success.jsp</result>
+			<!-- 如果页面fieldError包含错误信息,将自动转发到input视图 -->
+			<result
+				name="input">/index.jsp</result>
+		</action>
+		<!-- 网站用户退出登录 -->
+		<action
+			name="logout"
+			class="logoutAction">
+			<result
+				name="success">/index.jsp</result>
+		</action>
+		<!-- 网站用户注册 -->
+		<action
+			name="reg_*"
+			class="regAction"
+			method="{1}">
+
+			  <result name="reg">/WEB-INF/page/user/userReg.jsp</result>
+		 
+		<!--  
+			<result
+				name="reg">/WEB-INF/page/xmltest/web.xml</result>
+				-->
+			<result
+				name="message">/WEB-INF/page/user/regFinish.jsp</result>
+			<result
+				name="checkuser">/WEB-INF/page/user/checkuser.jsp</result>
+		</action>
+	</package>
+</struts>
